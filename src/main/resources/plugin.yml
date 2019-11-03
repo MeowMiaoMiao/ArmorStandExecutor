@@ -1,0 +1,5 @@
+name: ArmorStandExecutor
+version: ${project.version}
+main: net.wdsj.bukkit.armorstandexecutor.ArmorStandExecutor
+api-version: 1.13
+depend: [WdsjLib]
