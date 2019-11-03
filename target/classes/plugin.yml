@@ -2,4 +2,3 @@ name: ArmorStandExecutor
 version: 1.0-SNAPSHOT
 main: net.wdsj.bukkit.armorstandexecutor.ArmorStandExecutor
 api-version: 1.13
-depend: [WdsjLib]

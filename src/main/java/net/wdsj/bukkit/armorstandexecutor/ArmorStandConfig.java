@@ -36,7 +36,6 @@ public class ArmorStandConfig {
                     e.printStackTrace();
                 }
         }
-        ArmorStandExecutor.getInstance().getLogger().info("debug:"+debug +" cache:"+ cache);
 
         ConfigurationSection compSection = configurationSection.getConfigurationSection("component");
         armorStandExecutor.getArmorComponentManager().registerComponent(new CommandComponent(compSection.getString("COMMAND","command")));

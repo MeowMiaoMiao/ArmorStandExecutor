@@ -17,8 +17,6 @@ public abstract class ArmorComponent {
     private String key;
 
 
-
-
     ArmorComponent(String key) {
         this.key = key;
     }
