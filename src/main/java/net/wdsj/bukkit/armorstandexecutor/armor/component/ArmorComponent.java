@@ -1,10 +1,9 @@
 package net.wdsj.bukkit.armorstandexecutor.armor.component;
 
 import lombok.Getter;
+import me.clip.placeholderapi.PlaceholderAPI;
+import net.wdsj.bukkit.armorstandexecutor.ArmorStandExecutor;
 import org.bukkit.entity.Player;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Arthur
@@ -22,7 +21,15 @@ public abstract class ArmorComponent {
     }
 
 
-    public abstract void execute(Player player, String value);
+    public abstract boolean execute(Player player, String value);
+
+
+    protected String[] format(Player player, String value) {
+        if (ArmorStandExecutor.PLACEHOLDER_API_ENABLE) {
+            value = PlaceholderAPI.setBracketPlaceholders(player, value);
+        }
+        return value.split(";");
+    }
 
 
 }

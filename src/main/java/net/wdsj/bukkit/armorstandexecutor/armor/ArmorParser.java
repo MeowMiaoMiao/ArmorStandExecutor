@@ -45,7 +45,9 @@ public class ArmorParser {
             ArmorComponent armorComponent = ArmorStandExecutor.getInstance().getArmorComponentManager().match(key);
             if (armorComponent == null) continue;
             for (String s : parserMap.get(key)) {
-                armorComponent.execute(player, s);
+                if (!armorComponent.execute(player, s)) {
+                    break;
+                }
             }
         }
     }
@@ -63,7 +65,7 @@ public class ArmorParser {
                 if (ArmorStandExecutor.getInstance().getArmorStandConfig().isDebug()) {
                     ArmorStandExecutor.getInstance().getLogger().info
                             ("DEBUG > entityID: " + stand.getEntityId() + " parser K:V" + key + ":" + value);
-                    if ( ArmorStandExecutor.getInstance().getArmorComponentManager().match(key) == null) {
+                    if (ArmorStandExecutor.getInstance().getArmorComponentManager().match(key) == null) {
                         ArmorStandExecutor.getInstance().getLogger().info
                                 ("DEBUG > 错误的参数: " + key + " 请检查");
                     }

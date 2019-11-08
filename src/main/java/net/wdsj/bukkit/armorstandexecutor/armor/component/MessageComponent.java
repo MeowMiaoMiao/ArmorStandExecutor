@@ -14,11 +14,11 @@ public class MessageComponent extends ArmorComponent {
     }
 
     @Override
-    public void execute(Player player, String value) {
-        String[] split = value.split(";");
-        for (String s : split) {
-           player.sendMessage(s.replace("&","§").replace("{player}" , player.getName()));
+    public boolean execute(Player player, String value) {
+        for (String s : format(player, value)) {
+            player.sendMessage(s.replace("&", "§").replace("{player}", player.getName()));
         }
+        return true;
     }
 
 

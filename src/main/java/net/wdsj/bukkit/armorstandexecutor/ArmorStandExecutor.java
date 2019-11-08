@@ -10,22 +10,21 @@ import net.wdsj.bukkit.armorstandexecutor.listener.PlayerListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
+@Getter
 public final class ArmorStandExecutor extends JavaPlugin {
 
     @Getter
     private static ArmorStandExecutor instance;
 
-    @Getter
     private static ArmorStandExecutorAPI api;
 
-    @Getter
     private ArmorStandConfig armorStandConfig;
 
-    @Getter
     private IArmorParserGenerate armorParserGenerate;
 
-    @Getter
     private ArmorComponentManager armorComponentManager;
+
+    public static  boolean PLACEHOLDER_API_ENABLE;
 
 
     @Override
@@ -36,6 +35,8 @@ public final class ArmorStandExecutor extends JavaPlugin {
         api = new ArmorStandExecutorAPI(this);
         loadByLocal();
         Bukkit.getPluginManager().registerEvents(new PlayerListener(), this);
+        PLACEHOLDER_API_ENABLE = Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI");
+
         getLogger().info("启用成功 By Wdsj.net 如遇到问题，你可以前往 https://bbs.wdsj.net/t/dev 进行反馈");
 
     }
