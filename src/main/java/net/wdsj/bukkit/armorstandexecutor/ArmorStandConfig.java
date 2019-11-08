@@ -4,6 +4,7 @@ import lombok.Getter;
 import net.wdsj.bukkit.armorstandexecutor.armor.component.ArmorComponent;
 import net.wdsj.bukkit.armorstandexecutor.armor.component.CommandComponent;
 import net.wdsj.bukkit.armorstandexecutor.armor.component.MessageComponent;
+import net.wdsj.bukkit.armorstandexecutor.armor.component.PermissionComponent;
 import org.bukkit.configuration.ConfigurationSection;
 
 import java.lang.reflect.Field;
@@ -38,6 +39,7 @@ public class ArmorStandConfig {
         }
 
         ConfigurationSection compSection = configurationSection.getConfigurationSection("component");
+        armorStandExecutor.getArmorComponentManager().registerComponent(new PermissionComponent(compSection.getString("PERMISSION","permission")));
         armorStandExecutor.getArmorComponentManager().registerComponent(new CommandComponent(compSection.getString("COMMAND","command")));
         armorStandExecutor.getArmorComponentManager().registerComponent(new MessageComponent(compSection.getString("MESSAGE","message")));
     }
