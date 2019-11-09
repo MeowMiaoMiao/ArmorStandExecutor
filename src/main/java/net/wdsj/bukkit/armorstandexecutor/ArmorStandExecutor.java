@@ -37,7 +37,7 @@ public final class ArmorStandExecutor extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new PlayerListener(), this);
         PLACEHOLDER_API_ENABLE = Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI");
 
-        getLogger().info("启用成功 By Wdsj.net 如遇到问题，你可以前往 https://bbs.wdsj.net/t/dev 进行反馈");
+        getLogger().info("启用成功 By Wdsj.net 如遇到问题，请联系QQ 1213530749");
 
     }
 
